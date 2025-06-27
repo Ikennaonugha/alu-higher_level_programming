@@ -1,20 +1,17 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-string_number = str(number)
-last_digit = string_number[-1]
-int_last_digit = int(last_digit)
-if number < 0:
-    int_last_digit *= -1
+if number >= 0:
+    last_digit = number % 10
+else:
+    last_digit = -(abs(number) % 10)
 
-def checker(num):
+message = ""
+if last_digit > 5:
+    message = " and is greater than 5"
+elif last_digit == 0:
+    message = " and is 0"
+elif last_digit < 6 and last_digit != 0:
+    message = " and is less than 6 and not 0"
     
-    if num > 5:
-        return "and is greater than 5"
-    elif num == 0:
-        return "and is 0"
-    elif num < 6 and num != 0:
-        return "and is less than 6 and not 0"
-
-message = checker(int_last_digit)
-print(f"Last digit of {number} is {int_last_digit} {message}")
+print(f"Last digit of {number} is {last_digit}{message}")
