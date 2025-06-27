@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
 def print_last_digit(number):
-    str_number = str(number)
-    return str_number[-1]
+
+    if number <= 0:
+        print("{}".format(number % 10))
+    else:
+        print("-{}".format(abs(number) % 10))
