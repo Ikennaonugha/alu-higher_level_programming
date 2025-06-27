@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-print(f"{', '.join(f'{i}{j}' for i in range(10) for j in range(i + 1, 10))}")
+print("{}".format(', '.join('{}{}'.format(i, j for i in range(10) for j in range(i + 1, 10)))))
